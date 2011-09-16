@@ -16,12 +16,23 @@ window.open();
 var cropimage = require('org.selfkleptomaniac.ti.cropimage');
 Ti.API.info("module is => " + cropimage);
 
-label.text = cropimage.example();
-
-Ti.API.info("module exampleProp is => " + cropimage.exampleProp);
-cropimage.exampleProp = "This is a test value";
-
 if (Ti.Platform.name == "android") {
-	var proxy = cropimage.createExample({message: "Creating an example Proxy"});
-	proxy.printMessage("Hello world!");
+  window.addEventListener('click', function(){
+    Ti.Media.openPhotoGallery(style.gallery({
+      success:function(elem){
+        cropimage.cropper({
+          success:function(elem){
+            Ti.API.info(elem);//cropped image
+          },
+          error:function(){alert('cropper error');},
+          cancel:function(){alert('croppe canceled');},
+          image.e.media,
+          width:300,
+          height:300
+        });
+      },
+      cancel:function(){alert('cancel');},
+      error:function(){alert('error');}
+    });
+  }); 
 }
