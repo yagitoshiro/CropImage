@@ -106,7 +106,7 @@ public class CropimageModule extends KrollModule
 		intent.putExtra("output", Uri.parse(file_path));
 		
 		mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-				   "tmp_cropper_" + String.valueOf(System.currentTimeMillis()) + ".jpg"));
+				   "/org.selfkleptomanaic.ti.cropimage/tmp_cropper_" + String.valueOf(System.currentTimeMillis()) + ".jpg"));
 
 		CropImageResultHander resultHandler = new CropImageResultHander();
 		resultHandler.image_file = data;
