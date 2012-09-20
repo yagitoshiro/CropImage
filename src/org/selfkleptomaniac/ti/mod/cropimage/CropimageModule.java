@@ -65,28 +65,23 @@ public class CropimageModule extends KrollModule
 	// Methods
 	@Kroll.method
 	public void cropper(KrollDict options, int cropper_width, int cropper_height) {
-		Log.e(LCAT, "cropper called");
 
 		if(false == strageAvailable()){
 			 throw new NullPointerException();
 		}
 
-		Log.e(LCAT, "OK, rock n' roll!");
 		
 		final KrollFunction successCallback = getCallback(options, "success");
 		final KrollFunction cancelCallback = getCallback(options, "cancel");
 		final KrollFunction errorCallback = getCallback(options, "error");
 		
-		Log.e(LCAT, "OK, callbacks are set properly");
 
 		Activity activity = TiApplication.getAppRootOrCurrentActivity();
 		TiActivitySupport activitySupport = (TiActivitySupport) activity;
 
-		Log.e(LCAT, "OK, activity is ready");
 		
 		TiBlob data = getImageData(options, "image");
 
-		Log.e(LCAT, "OK, args are set");
 		
 //		Integer cropper_width = getSize(options, "width");
 //		Integer cropper_height = getSize(options, "height");
@@ -119,8 +114,6 @@ public class CropimageModule extends KrollModule
 		mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
 				   "/org.selfkleptomaniac.ti.mod.cropimage/tmp_cropper_" + String.valueOf(System.currentTimeMillis()) + ".jpg"));
 
-		Log.e(LCAT, "OK, file path is set");
-		Log.e(LCAT, "OK, native_path is :" + native_path.replace("file://", ""));
 		
 		Intent intent = new Intent("com.android.camera.action.CROP");
 //		intent.setClassName("com.android.gallery", "com.android.camera.CropImage");
@@ -138,7 +131,6 @@ public class CropimageModule extends KrollModule
 		intent.putExtra("return-data", true);
 		intent.putExtra("output", file_path);
 
-		Log.e(LCAT, "OK, file extras are set");
 		
 		CropImageResultHander resultHandler = new CropImageResultHander();
 		resultHandler.image_file = data;
@@ -150,7 +142,6 @@ public class CropimageModule extends KrollModule
 		resultHandler.cropperIntent = intent;
 		resultHandler.imageUri = mImageCaptureUri;
 		
-		Log.e(LCAT, "OK, callback handler is ready");
 
 		try{
 			activity.runOnUiThread(resultHandler);
