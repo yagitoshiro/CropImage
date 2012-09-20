@@ -8,7 +8,7 @@ TODO: Enter your module description here
 
 To access this module from JavaScript, you would do the following:
 
-	var cropimage = require("org.selfkleptomaniac.ti.cropimage");
+	var cropimage = require("org.selfkleptomaniac.ti.mod.cropimage");
 
 The cropimage variable is a reference to the Module object.	
 

@@ -2,16 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.1
-description: My module
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2011 by Your Company
+version: 0.2
+apiversion: 2
+description: image cropper
+author: Toshiro Yagi
+license: MIT
+copyright: Toshiro Yagi
 
 
 # these should not be edited
 name: cropimage
-moduleid: org.selfkleptomaniac.ti.cropimage
-guid: 0688e1cb-eeb0-49e5-bb05-2693a7e542ad
+moduleid: org.selfkleptomaniac.ti.mod.cropimage
+guid: 23dbf44f-dcfd-45d3-bcf4-2a8450c03c4f
 platform: android
-minsdk: 1.7.1
+minsdk: 2.1.2.GA

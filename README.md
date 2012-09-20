@@ -1,5 +1,10 @@
 Image cropping module for Appcelerator Titanium (Android)
 =========================================
+Build
+-------------------
+	$ export ANDROID_SDK=/path/to/android-sdk
+	$ export ANDROID_NDK=/path/to/android-ndk
+	$ ant clean && ant
 
 Description
 -------------------
