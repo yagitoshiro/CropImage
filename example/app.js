@@ -26,10 +26,10 @@ if (Ti.Platform.name == "android") {
           },
           error:function(){alert('cropper error');},
           cancel:function(){alert('croppe canceled');},
-          image.e.media,
-          width:300,
-          height:300
-        });
+          image.e.media},
+          300,
+          300
+        );
       },
       cancel:function(){alert('cancel');},
       error:function(){alert('error');}
