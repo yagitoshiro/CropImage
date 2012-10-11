@@ -13,4 +13,4 @@ See example for details.
 
 WARNING!!
 -------------------
-Currently, this module works only when get called in app.js. I mean, when you call it in required JS file, callback function won't get fired so that it does not work. Thread related problem? I guess so. Please ask android guys in Appcelerator before you accuse me. No, not me.
+This module works only when you use single JavaScript context in your app.
