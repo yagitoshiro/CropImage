@@ -26,7 +26,7 @@ if (Ti.Platform.name == "android") {
           },
           error:function(){alert('cropper error');},
           cancel:function(){alert('croppe canceled');},
-          image.e.media},
+          image:e.media},
           300,
           300
         );
