@@ -8,28 +8,27 @@
 var window = Ti.UI.createWindow({
 	backgroundColor:'white'
 });
-var label = Ti.UI.createLabel();
+var label = Ti.UI.createLabel({color:'Black', text:'click me'});
 window.add(label);
 window.open();
 
 // TODO: write your module tests here
-var cropimage = require('org.selfkleptomaniac.ti.cropimage');
+var cropimage = require('org.selfkleptomaniac.ti.mod.cropimage');
 Ti.API.info("module is => " + cropimage);
 
 if (Ti.Platform.name == "android") {
   window.addEventListener('click', function(){
-    Ti.Media.openPhotoGallery(style.gallery({
+    Ti.Media.openPhotoGallery({
       success:function(elem){
         cropimage.cropper({
-          success:function(elem){
-            Ti.API.info(elem);//cropped image
+          success:function(e){
+            Ti.API.info(e);//cropped image
           },
           error:function(){alert('cropper error');},
           cancel:function(){alert('croppe canceled');},
-          image:e.media},
+          image:elem.media},
           300,
-          300
-        );
+          300);
       },
       cancel:function(){alert('cancel');},
       error:function(){alert('error');}
