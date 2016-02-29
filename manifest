@@ -4,6 +4,7 @@
 #
 version: 0.2
 apiversion: 2
+architectures: armeabi armeabi-v7a x86
 description: image cropper
 author: Toshiro Yagi
 license: MIT
@@ -15,4 +16,4 @@ name: cropimage
 moduleid: org.selfkleptomaniac.ti.mod.cropimage
 guid: 23dbf44f-dcfd-45d3-bcf4-2a8450c03c4f
 platform: android
-minsdk: 2.1.2.GA
+minsdk: 5.1.0.GA

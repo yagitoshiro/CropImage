@@ -66,7 +66,7 @@ public class CropimageModule extends KrollModule
 	@Kroll.method
 	public void cropper(KrollDict options, int cropper_width, int cropper_height) {
 
-		if(false == strageAvailable()){
+		if(false == storageAvailable()){
 			 throw new NullPointerException();
 		}
 
@@ -76,7 +76,8 @@ public class CropimageModule extends KrollModule
 		final KrollFunction errorCallback = getCallback(options, "error");
 		
 
-		Activity activity = TiApplication.getAppRootOrCurrentActivity();
+//		Activity activity = TiApplication.getAppRootOrCurrentActivity();
+		Activity activity = TiApplication.getInstance().getCurrentActivity();
 		TiActivitySupport activitySupport = (TiActivitySupport) activity;
 
 		
@@ -152,7 +153,7 @@ public class CropimageModule extends KrollModule
 		}
 	}
 
-	private boolean strageAvailable(){
+	private boolean storageAvailable(){
 		if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
 			return true;
 		}else{
